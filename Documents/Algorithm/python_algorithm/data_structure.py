@@ -2,26 +2,71 @@
 #       Data Structure
 # -------------------------------
 
-N,M = 5, 2
-patiences = [60, 50, 70, 80, 90]
+a, b = 'AbaAeCe', 'baeeACA'
+hash = {}
 
-# N,M = 6, 0
-# patiences = [60, 60, 90, 60, 60, 60]
-target = patiences[M] # 70번 환자
+for i in range(len(a)):
+    hash[a[i]] = hash.get(a[i], 0) + 1
+    hash[b[i]] = hash.get(b[i], 0) - 1
+print(all(hash.values()))
+print(hash.values())
 
-for _ in range(N):
-    p = patiences.pop(0)
-    if p < max(patiences):
-        patiences.append(p)
-    else: patiences.insert(0,p)
+# a, b = 'AbaAeCe', 'baeeACA'
+# N = len(a)
+# ans = 'YES'
+# def hash (x):
+#     hash = {}
+#     for _x in x: hash[_x] = hash.get(_x, 0) + 1   
+#     return hash
 
-print(patiences)
+# hash_a, hash_b = hash(a), hash(b)
+# for key, val in hash_a.items():
+#     if not hash_b[key] == val:
+#         ans = 'NO'
+#         break
+# print(ans)
 
-ans = 0
-for i in range(N):
-    if patiences[i] == target:
-        ans = i
-print(ans)
+
+# classes = 'CBA'
+# N = 3
+# plans = ['CBDAGE', 'FGCDAB', 'CTSBDEA']
+
+# classes = 'AFC'
+# N = 1
+# plans = ['AFFDCCFF']
+
+# for plan in plans:
+#     ans = 'YES'
+#     arr = list(classes)
+#     for p in list(plan):
+#         if not arr: break
+#         if p == arr[0]:
+#             arr.pop(0)
+
+#     if arr: ans = 'NO'
+#     print(ans)
+
+# N,M = 5, 2
+# patiences = [60, 50, 70, 80, 90]
+
+# # N,M = 6, 0
+# # patiences = [60, 60, 90, 60, 60, 60]
+# target = patiences[M] # 70번 환자
+
+# for _ in range(N):
+#     p = patiences.pop(0)
+#     if p < max(patiences):
+#         patiences.append(p)
+#     else: patiences.insert(0,p)
+
+# print(patiences)
+
+# ans = 0
+# for i in range(N):
+#     if patiences[i] == target:
+#         ans = i
+# print(ans)
+
 # N,M = 8, 3
 # prince = [ i+1 for i in range(N) ]
 # cnt = 1
